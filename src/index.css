@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+body{
+  font-family:"Roboto", sans-serif;
+}
+
+/* Light Theme */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #111111;
+  --card-bg: #ffffff;
+  --border-color: #e5e7eb;
+  --primary-color: #22c55e;
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
+  --bg-color: #0f172a;
+  --text-color: #ffffff;
+  --card-bg: #1e293b;
+  --border-color: #334155;
+  --primary-color: #22c55e;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: 0.3s ease;
+}
+
+/* The palette keeps the same fresh green accent while giving every existing
+   section, card and text token a readable dark counterpart. */
+.dark body { background-color: #020617; color: #e2e8f0; }
+.dark .bg-white { background-color: #0f172a; }
+.dark .bg-\[\#F7FCFA\] { background-color: #0b1f1a; }
+.dark .bg-transparent { background-color: transparent; }
+.dark .bg-gray-50, .dark .bg-gray-100 { background-color: #1e293b; }
+.dark .bg-green-50 { background-color: #052e24; }
+.dark .text-gray-900, .dark .text-slate-900 { color: #f8fafc; }
+.dark .text-gray-800 { color: #e2e8f0; }
+.dark .text-gray-700, .dark .text-gray-600, .dark .text-gray-500 { color: #94a3b8; }
+.dark .text-gray-400 { color: #64748b; }
+.dark .border, .dark .border-gray-700, .dark .border-green-100 { border-color: #334155; }
+.dark .shadow-lg, .dark .shadow-xl, .dark .shadow-2xl, .dark .shadow-md { box-shadow: 0 18px 45px rgb(0 0 0 / 0.28); }
+.dark input { background-color: #0f172a; color: #e2e8f0; }
+
+/* Common elements */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+a {
+  color: var(--text-color);
+}
+
+.card,
+.service-card,
+.feature-card,
+.blog-card,
+.testimonial-card {
+  background-color: var(--card-bg);
+  border-color: var(--border-color);
+  transition: 0.3s ease;
+}
